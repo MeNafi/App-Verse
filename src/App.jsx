@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello i am from App.jsx part</h1>
+     
     </>
   )
 }
