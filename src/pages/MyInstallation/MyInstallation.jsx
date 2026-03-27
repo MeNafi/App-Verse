@@ -11,21 +11,27 @@ const MyInstallation = () => {
 
   // Helper function to format downloads (e.g., 9000000 -> 9M)
  const formatDownloads = (num) => {
-    if (!num) return "0";
-    const n = parseFloat(num);
+  if (!num) return "0M";
 
-    // If 1 billion or more
-    if (n >= 1000000000) {
-        return (n / 1000000000).toFixed(1) + "B";
-    }
-    // If 1 million or more
-    if (n >= 1000000) {
-        return (n / 1000000).toFixed(0) + "M";
-    }
-    // Default for small numbers (like "9")
-    return n + "M";
+  const n = parseFloat(num);
 
-  };
+  // 1 Billion or more
+  if (n >= 1000000000) {
+    return (n / 1000000000).toFixed(1) + "B";
+  }
+
+  // 1 Million or more
+  if (n >= 1000000) {
+    return (n / 1000000).toFixed(1) + "M";
+  }
+
+  // Less than 1 Million
+  if (n >= 1000) {
+    return (n / 1000).toFixed(1) + "K";
+  }
+
+  return n.toString();
+};
   
 
   const handleUninstall = (id) => {

@@ -12,24 +12,27 @@ const AppDetails = () => {
     const [isInstalled, setIsInstalled] = useState(false);
 
     // Converts Million to Billion if hits 1000
-   const formatDownloads = (num) => {
-    if (!num) return "0M";
-    
-    // Ensure we are working with a clean number
-    const n = parseFloat(num);
+const formatDownloads = (num) => {
+  if (!num) return "0M";
 
-    // If the number is already 1,000,000 or higher (e.g. TikTok)
-    if (n >= 1000000000) {
-        return (n / 1000000000).toFixed(1) + "B";
-    }
-    
-    // If the number is between 1,000 and 999,999
-    if (n >= 1000) {
-        return (n / 1000).toFixed(1) + "B";
-    }
-    
-    // Default to Million for smaller numbers
-    return n + "M";
+  const n = parseFloat(num);
+
+  // 1 Billion or more
+  if (n >= 1000000000) {
+    return (n / 1000000000).toFixed(1) + "B";
+  }
+
+  // 1 Million or more
+  if (n >= 1000000) {
+    return (n / 1000000).toFixed(1) + "M";
+  }
+
+  // Less than 1 Million
+  if (n >= 1000) {
+    return (n / 1000).toFixed(1) + "K";
+  }
+
+  return n.toString();
 };
 
     useEffect(() => {
