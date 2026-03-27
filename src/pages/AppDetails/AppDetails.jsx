@@ -19,8 +19,8 @@ const AppDetails = () => {
     const n = parseFloat(num);
 
     // If the number is already 1,000,000 or higher (e.g. TikTok)
-    if (n >= 1000000) {
-        return (n / 1000000).toFixed(1) + "B";
+    if (n >= 1000000000) {
+        return (n / 1000000000).toFixed(1) + "B";
     }
     
     // If the number is between 1,000 and 999,999

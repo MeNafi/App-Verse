@@ -26,6 +26,7 @@ const MyInstallation = () => {
     return n + "M";
 
   };
+  
 
   const handleUninstall = (id) => {
     const remainingApps = installedApps.filter((app) => app.id !== id);
