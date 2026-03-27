@@ -28,6 +28,14 @@ const Router = createBrowserRouter([
         path: "installation",
         element: <MyInstallation />,
       },
+      
+    {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />, // This triggers for invalid URLs
+    
+  
+      }
     ],
   },
 ]);
