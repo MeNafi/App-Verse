@@ -25,10 +25,10 @@ AppVerse is a modern **React-based** web application where users can explore **a
 
 #### 🔍 This project focuses on:
 
-✅ Component-based architecture
-✅ JSON-based dynamic data rendering
-✅ State management
-✅ Interactive UI experience
+- Component-based architecture
+- JSON-based dynamic data rendering
+- State management
+- Interactive UI experience
 
 
 ## ✨ Key Features
