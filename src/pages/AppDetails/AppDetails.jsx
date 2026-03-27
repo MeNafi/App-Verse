@@ -82,14 +82,14 @@ const AppDetails = () => {
                             </div>
                         </div>
 
-                        {/* High Opacity Install Button */}
+                        {/* Install Button */}
                         <button 
                             onClick={handleInstall}
                             disabled={isInstalled}
                             className={`px-8 py-2.5 rounded-md font-bold text-sm transition-all shadow-md ${
                                 isInstalled 
                                 ? "bg-gray-200 text-gray-500 cursor-not-allowed" 
-                                : "bg-[#71d394] text-white opacity-100 hover:bg-[#5eb87d]"
+                                : "bg-[#18be52] text-white opacity-100 hover:bg-[#32d26a]"
                             }`}
                         >
                             {isInstalled ? "Installed" : `Install Now (${app.size >= 1024 ? (app.size/1024).toFixed(1) + " GB" : app.size + " MB"})`}

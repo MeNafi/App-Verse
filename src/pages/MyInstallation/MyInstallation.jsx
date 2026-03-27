@@ -10,14 +10,21 @@ const MyInstallation = () => {
   }, []);
 
   // Helper function to format downloads (e.g., 9000000 -> 9M)
-  const formatDownloads = (num) => {
+ const formatDownloads = (num) => {
     if (!num) return "0";
-    // If the number is 1 million or more, divide by 1M and add 'M'
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(0) + "M";
+    const n = parseFloat(num);
+
+    // If 1 billion or more
+    if (n >= 1000000000) {
+        return (n / 1000000000).toFixed(1) + "B";
     }
-    // If it's already a small number/string like "9", just return it with M
-    return num + "M";
+    // If 1 million or more
+    if (n >= 1000000) {
+        return (n / 1000000).toFixed(0) + "M";
+    }
+    // Default for small numbers (like "9")
+    return n + "M";
+
   };
 
   const handleUninstall = (id) => {
