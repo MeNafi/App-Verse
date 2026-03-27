@@ -11,6 +11,27 @@ const AppDetails = () => {
     const [loading, setLoading] = useState(true);
     const [isInstalled, setIsInstalled] = useState(false);
 
+    // Converts Million to Billion if hits 1000
+   const formatDownloads = (num) => {
+    if (!num) return "0M";
+    
+    // Ensure we are working with a clean number
+    const n = parseFloat(num);
+
+    // If the number is already 1,000,000 or higher (e.g. TikTok)
+    if (n >= 1000000) {
+        return (n / 1000000).toFixed(1) + "B";
+    }
+    
+    // If the number is between 1,000 and 999,999
+    if (n >= 1000) {
+        return (n / 1000).toFixed(1) + "B";
+    }
+    
+    // Default to Million for smaller numbers
+    return n + "M";
+};
+
     useEffect(() => {
         window.scrollTo(0, 0);
         setLoading(true);
@@ -62,7 +83,8 @@ const AppDetails = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                                 </div>
                                 <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Downloads</p>
-                                <p className="text-2xl font-extrabold text-[#1e293b]">{app.downloads}M</p>
+                                {/* Fixed Download display with Billion logic */}
+                                <p className="text-2xl font-extrabold text-[#1e293b]">{formatDownloads(app.downloads)}</p>
                             </div>
 
                             <div className="text-center md:text-left border-l border-gray-100 pl-8">
@@ -82,14 +104,15 @@ const AppDetails = () => {
                             </div>
                         </div>
 
-                        {/* Install Button */}
+                        {/* Updated Install Button with exact #1DF072 */}
                         <button 
                             onClick={handleInstall}
                             disabled={isInstalled}
-                            className={`px-8 py-2.5 rounded-md font-bold text-sm transition-all shadow-md ${
+                            style={{ backgroundColor: isInstalled ? '#E5E7EB' : '#1DF072' }}
+                            className={`px-10 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md ${
                                 isInstalled 
-                                ? "bg-gray-200 text-gray-500 cursor-not-allowed" 
-                                : "bg-[#18be52] text-white opacity-100 hover:bg-[#32d26a]"
+                                ? "text-gray-500 cursor-not-allowed" 
+                                : "text-white opacity-100 hover:brightness-95 active:scale-95"
                             }`}
                         >
                             {isInstalled ? "Installed" : `Install Now (${app.size >= 1024 ? (app.size/1024).toFixed(1) + " GB" : app.size + " MB"})`}
@@ -113,7 +136,7 @@ const AppDetails = () => {
                                 <YAxis 
                                     dataKey="name" 
                                     type="category" 
-                                    tickFormatter={(val) => `${val} star`} // Fixed "1 star", "2 star" labels
+                                    tickFormatter={(val) => `${val} star`}
                                     tick={{fill: '#94a3b8', fontSize: 13}} 
                                     axisLine={false} 
                                     tickLine={false} 
