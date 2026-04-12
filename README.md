@@ -5,7 +5,6 @@ A dynamic and interactive app store-style web application built with **React.js,
 ### 🎯 Live Demo: https://appverse05.netlify.app/
 ## [![Netlify](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=netlify&logoColor=white)](https://appverse05.netlify.app/) 
 
-
   
 ## 🧩 Tech Stack
 
