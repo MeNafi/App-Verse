@@ -7,7 +7,7 @@ A dynamic and interactive app store-style web application built with **React.js,
 
 
 
-## 🧩 Tech Stack
+## 🧩 Tech Stackk
 
 <p align="left">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
