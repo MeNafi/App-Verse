@@ -18,6 +18,7 @@ A dynamic and interactive app store-style web application built with **React.js,
 </p>
 
 
+
 ## 🚀 Project Overview
 
 AppVerse is a modern **React-based** web application where users can explore **apps, view details,** and manage installations with a **clean and responsive UI.**
