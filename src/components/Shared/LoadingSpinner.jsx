@@ -2,6 +2,7 @@ import React from 'react';
 
 // Added "message" prop to make the spinner context-aware
 const LoadingSpinner = ({ message = "Loading AppVerse..." }) => {
+
     return (
         <div className="flex flex-col justify-center items-center min-h-[60vh] gap-4">
             {/* Animated Dots Container */}
