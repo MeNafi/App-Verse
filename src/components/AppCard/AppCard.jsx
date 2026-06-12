@@ -3,6 +3,7 @@ import { HiDownload } from "react-icons/hi";
 import { AiFillStar } from "react-icons/ai"; 
 import { useNavigate } from "react-router-dom"; 
 
+
 const AppCard = ({ app }) => {
   // Matches your JSON keys: id, title, image, downloads, ratingAvg
   const { id, title, image, downloads, ratingAvg } = app || {};
