@@ -3,7 +3,6 @@ import AppCard from "../../components/AppCard/AppCard";
 import { HiSearch } from "react-icons/hi";
 import LoadingSpinner from "../../components/Shared/LoadingSpinner"; // Import the spinner
 
-
 const AllApps = () => {
   const [apps, setApps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -24,6 +23,7 @@ const AllApps = () => {
       });
   }, []);
 
+  
   // Handle Search with animation
   const handleSearch = (e) => {
     const value = e.target.value;
