@@ -3,6 +3,7 @@ import AppCard from "../../components/AppCard/AppCard";
 import { HiSearch } from "react-icons/hi";
 import LoadingSpinner from "../../components/Shared/LoadingSpinner"; // Import the spinner
 
+
 const AllApps = () => {
   const [apps, setApps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
