@@ -3,7 +3,6 @@ import { FaCheck, FaPowerOff, FaClock, FaTrello } from "react-icons/fa";
 import { GiEmptyHourglass, GiCrossedSwords } from "react-icons/gi";
 import iphone from "../../assets/iphone.png";
 
-
 const Banner = () => {
   return (
     <div className="bg-white pt-20">
