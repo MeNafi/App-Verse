@@ -28,7 +28,6 @@ const AppDetails = () => {
     return n.toString();
   };
 
-  
   useEffect(() => {
     window.scrollTo(0, 0);
     setLoading(true);
