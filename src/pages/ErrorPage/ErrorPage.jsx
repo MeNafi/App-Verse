@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
+    
     // Get error details from the router
     const error = useRouteError();
 
