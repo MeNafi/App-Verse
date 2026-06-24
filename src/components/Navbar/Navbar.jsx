@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaGithub, FaBars } from "react-icons/fa";
 
+
 const Navbar = () => {
   // Desktop-only active style
   const desktopLinkStyles = ({ isActive }) =>
